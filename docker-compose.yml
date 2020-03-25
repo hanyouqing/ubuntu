@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ubuntu-builder:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - mirror=mirrors.aliyun.com
+    container_name: ubuntu-builder
+    hostname: ubuntu-builder
+    image: hanyouqing/ubuntu:16.04
+    environment:
+     - UBUNTU_DELAY=1000
+
